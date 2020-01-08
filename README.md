@@ -1,4 +1,4 @@
-![VIM Logo](https://i.imgur.com/wQgLi2F.jpg)
+![Imgur](https://i.imgur.com/F6Jyfg4.png)
 
 ![screenshot](https://i.imgur.com/KoKH5aA.png)
 
@@ -8,10 +8,6 @@ Table of contents
   * [Getting Started](#getting-started)
     * [Bash](#bash)
     * [Fish](#fish)
-    * [Neovim](#neovim)
-    * [Deoplete](#deoplete)
-    * [Neomake](#neomake)
-    * [Base16](#base16-optional)
     * [DevIcons](#devicons-optional)
     * [Manual Install](#alternatively)
   * [Plugins](#plugins)
@@ -38,51 +34,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/jarolrod/vim-python-ide/ma
 ```
 curl -fsSL https://raw.githubusercontent.com/jarolrod/vim-python-ide/master/setup.sh | sh       
 ```
-### Neovim
-* Dependency for Deoplete and NeoMake
-* Installation:
- * ```
-   pip3 install neovim
-   ```
-### Deoplete
- * An Asynchronous Completion Engine for Vim
- * Requirements:
-  * Python 3
-  * Vim 8+
-  * [Neovim](#neovim) (to be used as a server)
   
-### Neomake
- * Asynchronous Linting Engine for Vim 
- * Same requirements as [Deoplete](#deoplete)
- 
-### Base16 (Optional)
-Base16 is used to theme vim, it can also theme your terminal. Follow these steps to install:
-* Installing Base16
-   ```
-   git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
-   ```
-   * Add the following to your shell config (Themes terminal + vim):
-     * Bash + ZSH
-       ```
-       BASE16_SHELL=$HOME/.config/base16-shell/
-       [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
-       ```
-     * Fish
-       ```
-       # Base16 Shell
-       if status --is-interactive
-           eval sh $HOME/.config/base16-shell/scripts/base16-default-dark.sh
-       end
-       ```
-   * Add the following to your vimrc (Only theme vim):
-     ```
-     if filereadable(expand("~/.vimrc_background"))
-       let base16colorspace=256
-       source ~/.vimrc_background
-     endif
-     ```
-* If you dont want this feature simply remove this plugin from your vimrc and execute :PluginUpdate in vim, for proper removal delete the base16 plugin folder 
-
 ### DevIcons (Optional)
 This plugin is used to show file icons in NerdTree and requires additional steps to install:
 * Must install a patched font that contains required glyphs: 

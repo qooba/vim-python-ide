@@ -1,31 +1,3 @@
-"++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
-"                                                                                                "
-"                                          .::::.                                                "
-"                             ___________ :;;;;:`____________                                    "
-"                             \_________/ ?????L \__________/                                    "
-"                               |.....| ????????> :.......'                                      "
-"                               |:::::| $$$$$$"`.:::::::' ,                                      "
-"                              ,|:::::| $$$$"`.:::::::' .OOS.                                    "
-"                            ,7D|;;;;;| $$"`.;;;;;;;' .OOO888S.                                  "
-"                          .GDDD|;;;;;| ?`.;;;;;;;' .OO8DDDDDNNS.                                "
-"                           'DDO|IIIII| .7IIIII7' .DDDDDDDDNNNF`                                 "
-"                             'D|IIIIII7IIIII7' .DDDDDDDDNNNF`                                   "
-"                               |EEEEEEEEEE7' .DDDDDDDNNNNF`                                     "
-"                               |EEEEEEEEZ' .DDDDDDDDNNNF`                                       "
-"                               |888888Z' .DDDDDDDDNNNF`                                         "
-"                               |8888Z' ,DDDDDDDNNNNF`                                           "
-"                               |88Z'    "DNNNNNNN"                                              "
-"                               '"'        "MMMM"                                                "
-"                                            ""                                                  "
-"                                                                                                "
-"      ___    ____                                            __   _         _    ________  ___  "
-"     /   |  / / /  __  ______  __  __   ____  ___  ___  ____/ /  (_)____   | |  / /  _/  |/  /  "
-"    / /| | / / /  / / / / __ \/ / / /  / __ \/ _ \/ _ \/ __  /  / / ___/   | | / // // /|_/ /   "
-"   / ___ |/ / /  / /_/ / /_/ / /_/ /  / / / /  __/  __/ /_/ /  / (__  )    | |/ // // /  / /    "
-"  /_/  |_/_/_/   \__, /\____/\__,_/  /_/ /_/\___/\___/\__,_/  /_/____/     |___/___/_/  /_/     "
-"                   /_/                                                                          "
-"++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
-
 set nocompatible              " required
 filetype off                  " required
 set hidden
@@ -39,7 +11,7 @@ call vundle#begin()
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+Plugin 'gmarik/Vundle.vim'                  " Vundle Plugin Manager
 
 " Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
 "-------------------=== Code/Project navigation ===-------------
@@ -54,10 +26,8 @@ Plugin 'fisadev/FixedTaskList.vim'          " Pending tasks list
 Plugin 'yuttie/comfortable-motion.vim'      " Smooth scrolling
 Plugin 'MattesGroeger/vim-bookmarks'        " Bookmarks
 Plugin 'thaerkh/vim-indentguides'           " Visual representation of indents
-Plugin 'neomake/neomake'                    " Asynchronous Linting and Make Framework
-Plugin 'Shougo/deoplete.nvim'               " Asynchronous Completion
-Plugin 'roxma/nvim-yarp'                    " Deoplete Dependency #1
-Plugin 'roxma/vim-hug-neovim-rpc'           " Deoplete Dependency #2
+Plugin 'w0rp/ale'                           " Async Lint Engine
+Plugin 'valloric/youcompleteme'             " Code Completion
 
 "-------------------=== Other ===-------------------------------
 Plugin 'tpope/vim-surround'                 " Parentheses, brackets, quotes, XML tags, and more
@@ -65,7 +35,6 @@ Plugin 'flazz/vim-colorschemes'             " Colorschemes
 Plugin 'vimwiki/vimwiki'                    " Personal Wiki
 Plugin 'jreybert/vimagit'                   " Git Operations
 Plugin 'kien/rainbow_parentheses.vim'       " Rainbow Parentheses
-Plugin 'chriskempson/base16-vim'            " Base 16 colors
 Plugin 'ryanoasis/vim-devicons'             " Dev Icons
 
 "-------------------=== Snippets support ===--------------------
@@ -77,7 +46,6 @@ Plugin 'honza/vim-snippets'                 " snippets repo
 "-------------------=== Languages support ===-------------------
 Plugin 'scrooloose/nerdcommenter'           " Easy code documentation
 Plugin 'mitsuhiko/vim-sparkup'              " Sparkup(XML/jinja/htlm-django/etc.) support
-Plugin 'w0rp/ale'
 
 "-------------------=== Python  ===-----------------------------
 Plugin 'klen/python-mode'                   " Python mode (docs, refactor, lints...)
@@ -87,7 +55,7 @@ Plugin 'mitsuhiko/vim-jinja'
 Plugin 'jmcantrell/vim-virtualenv'
 
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
+call vundle#end()                           " required
 filetype on
 filetype plugin on
 filetype plugin indent on
@@ -99,11 +67,10 @@ if filereadable(expand("~/.vimrc_background"))
   source ~/.vimrc_background
 endif
 set encoding=utf-8
-let base16colorspace=256
 set t_Co=256                                " 256 colors
 set guifont=mononoki\ Nerd\ Font\ 18
-colorscheme base16-default-dark             " set vim colorscheme
-let g:airline_theme='base16_spacemacs'             " set airline theme
+colorscheme wombat256mod             " set vim colorscheme
+let g:airline_theme='wombat256mod'      " set airline theme
 syntax enable                               " enable syntax highlighting
 
 set pyxversion=0
@@ -148,16 +115,13 @@ nmap <F10> :bnext<CR>
 nmap <silent> <leader>q :SyntasticCheck # <CR> :bp <BAR> bd #<CR>
 
 "=====================================================
-"" Neomake Settings 
+"" YouCompleteMe Settings
 "=====================================================
-call neomake#configure#automake('w')
-let g:neomake_open_list = 2
 
 "=====================================================
-"" Deoplete  Settings 
+"" Ale Settings (Linting)
 "=====================================================
-" Use deoplete.
-let g:deoplete#enable_at_startup = 1
+" Use Ale.
 
 "=====================================================
 "" Relative Numbering 
@@ -304,6 +268,18 @@ set listchars=tab:›\ ,trail:•,extends:#,nbsp:.
 
 " python executables for different plugins
 let g:pymode_python='python'
+
+
+
+nmap <leader>g :YcmCompleter GoTo<CR>
+nmap <leader>d :YcmCompleter GoToDefinition<CR>
+
+let g:ale_sign_column_always = 0
+let g:ale_emit_conflict_warnings = 0
+execute pathogen#infect()
+let g:airline#extensions#ale#enabled = 1
+let g:pymode_rope_lookup_project = 0
+let g:airline#extensions#tabline#enabled = 1
 
 " rope
 let g:pymode_rope=0
