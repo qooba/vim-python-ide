@@ -27,7 +27,7 @@ Plugin 'yuttie/comfortable-motion.vim'      " Smooth scrolling
 Plugin 'MattesGroeger/vim-bookmarks'        " Bookmarks
 Plugin 'thaerkh/vim-indentguides'           " Visual representation of indents
 Plugin 'w0rp/ale'                           " Async Lint Engine
-Plugin 'valloric/youcompleteme'             " Code Completion
+Plugin 'Valloric/YouCompleteMe'             " Code Completion
 
 "-------------------=== Other ===-------------------------------
 Plugin 'tpope/vim-surround'                 " Parentheses, brackets, quotes, XML tags, and more
@@ -69,8 +69,8 @@ endif
 set encoding=utf-8
 set t_Co=256                                " 256 colors
 set guifont=mononoki\ Nerd\ Font\ 18
-colorscheme wombat256mod             " set vim colorscheme
-let g:airline_theme='wombat256mod'      " set airline theme
+colorscheme wombat256mod                    " set vim colorscheme
+let g:airline_theme='wombat'                " set airline theme
 syntax enable                               " enable syntax highlighting
 
 set pyxversion=0
@@ -122,6 +122,11 @@ nmap <silent> <leader>q :SyntasticCheck # <CR> :bp <BAR> bd #<CR>
 "" Ale Settings (Linting)
 "=====================================================
 " Use Ale.
+" Show Ale in Airline
+let g:airline#extensions#ale#enabled = 1
+
+" Ale Gutter
+let g:ale_sign_column_always = 1
 
 "=====================================================
 "" Relative Numbering 

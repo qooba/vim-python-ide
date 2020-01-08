@@ -9,34 +9,6 @@ wrapper() {
   REPO_HTTPS="https://github.com/jarolrod/vim-python-ide.git"
   VUNDLE_HTTPS="https://github.com/VundleVim/Vundle.vim.git"
 
-echo "${BLUE}"
-cat << "HELLO_TEXT"
-                                                 ..
-                                          .::::.
-                             ___________ :;;;;:`____________
-                             \_________/ ?????L \__________/
-                               |.....| ????????> :.......'
-                               |:::::| $$$$$$"`.:::::::' ,
-                              ,|:::::| $$$$"`.:::::::' .OOS.
-                            ,7D|;;;;;| $$"`.;;;;;;;' .OOO888S.
-                          .GDDD|;;;;;| ?`.;;;;;;;' .OO8DDDDDNNS.
-                           'DDO|IIIII| .7IIIII7' .DDDDDDDDNNNF`
-                             'D|IIIIII7IIIII7' .DDDDDDDDNNNF`
-                               |EEEEEEEEEE7' .DDDDDDDNNNNF`
-                               |EEEEEEEEZ' .DDDDDDDDNNNF`
-                               |888888Z' .DDDDDDDDNNNF`
-                               |8888Z' ,DDDDDDDNNNNF`
-                               |88Z'    "DNNNNNNN"
-                               '"'        "MMMM"
-                                            ""
-
-    ___    ____                                            __   _         _    ________  ___
-   /   |  / / /  __  ______  __  __   ____  ___  ___  ____/ /  (_)____   | |  / /  _/  |/  /
-  / /| | / / /  / / / / __ \/ / / /  / __ \/ _ \/ _ \/ __  /  / / ___/   | | / // // /|_/ /
- / ___ |/ / /  / /_/ / /_/ / /_/ /  / / / /  __/  __/ /_/ /  / (__  )    | |/ // // /  / /
-/_/  |_/_/_/   \__, /\____/\__,_/  /_/ /_/\___/\___/\__,_/  /_/____/     |___/___/_/  /_/
-                 /_/
-HELLO_TEXT
 echo "${NORMAL}"
 
   if [ ! -n "$VIM" ]; then
@@ -81,7 +53,6 @@ echo "${NORMAL}"
   if [ ! -d "$VIM/bundle/Vundle.vim" ]; then
       printf "${BLUE}%s${NORMAL}\n" "Installing Vundle..."
       env git clone --depth=1 $VUNDLE_HTTPS "$VIM/bundle/Vundle.vim"
-      git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
  fi
 
   if [ ! -f $VIM/colors/wombat256mod.vim ]; then
@@ -91,7 +62,6 @@ echo "${NORMAL}"
       wget 'http://www.vim.org/scripts/download_script.php?src_id=13400' -O $VIM/colors/wombat256mod.vim
       
   fi
-
   printf "${GREEN}%s${NORMAL}\n" "Vimrc has been configured ;)"
   printf "${YELLOW}%s${NORMAL}\n" "Do not worry about error messages. When it occurs just press enter and wait till all plugins are installed."
   printf "${BLUE}%s${NORMAL}\n" "Keep calm and use VIM!"

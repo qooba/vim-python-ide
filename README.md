@@ -1,4 +1,4 @@
-![Imgur](https://i.imgur.com/F6Jyfg4.png)
+![Imgur](https://i.imgur.com/hVVulbM.png)
 
 ![screenshot](https://i.imgur.com/KoKH5aA.png)
 
@@ -34,7 +34,27 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/jarolrod/vim-python-ide/ma
 ```
 curl -fsSL https://raw.githubusercontent.com/jarolrod/vim-python-ide/master/setup.sh | sh       
 ```
-  
+### YouCompleteMe
+YouCompleteMe must be compiled for it to work
+#### MacOS
+1. Assuming you already have MacVim installed, install Cmake through brew
+```
+brew install cmake
+```
+2. Navigate to YouCompleteMe bundle folder and run the compile script
+```
+cd ~/.vim/bundle/YouCompleteMe
+./install.py --clang-completer
+```
+3. Reference the [YouCompleteMe](https://github.com/ycm-core/YouCompleteMe) README.md for any other configuration
+
+### Linux
+Make sure you have Cmake and Python 3 Headers, they can be downloaded through your distributions package manager. Then run:
+```
+cd ~/.vim/bundle/YouCompleteMe
+python3 ./install.py --clang-completer
+```
+
 ### DevIcons (Optional)
 This plugin is used to show file icons in NerdTree and requires additional steps to install:
 * Must install a patched font that contains required glyphs: 
