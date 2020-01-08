@@ -275,13 +275,10 @@ set listchars=tab:›\ ,trail:•,extends:#,nbsp:.
 let g:pymode_python='python'
 
 
-
 nmap <leader>g :YcmCompleter GoTo<CR>
 nmap <leader>d :YcmCompleter GoToDefinition<CR>
 
-let g:ale_sign_column_always = 0
 let g:ale_emit_conflict_warnings = 0
-execute pathogen#infect()
 let g:airline#extensions#ale#enabled = 1
 let g:pymode_rope_lookup_project = 0
 let g:airline#extensions#tabline#enabled = 1
@@ -371,14 +368,3 @@ vno <left> <Nop>
 vno <right> <Nop>
 vno <up> <Nop>
 
-python3 << EOF
-import vim
-import git
-def is_git_repo():
-	try:
-		_ = git.Repo('.', search_parent_directories=True).git_dir
-		return "1"
-	except:
-		return "0"
-vim.command("let g:pymode_rope = " + is_git_repo())
-EOF
