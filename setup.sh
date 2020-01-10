@@ -183,4 +183,4 @@ else
     echo "Install this plugin and then compile it in order to use its completion service."
     open_info $YCM_INSTALL
 fi
-
+vim
