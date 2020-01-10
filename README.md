@@ -2,6 +2,8 @@
 
 ![screenshot](https://i.imgur.com/KoKH5aA.png)
 
+
+
 Table of contents
 =================
 
@@ -25,7 +27,7 @@ Table of contents
   
 ## Getting Started
 
-A script shell will get a copy of the vimrc up and running on your local machine for testing purposes:
+A script shell will get a copy of the vimrc up and running on your local machine for testing purposes. The script will install the vimrc and compile the YouCompleteMe plugin:
 ### Bash 
 ```
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/jarolrod/vim-python-ide/master/setup.sh)"
