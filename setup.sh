@@ -173,7 +173,7 @@ wrapper
 # Automated PluginInstall and YouCompleteMe Compile
 vim +PluginInstall +quitall
 if [ -d "$VIM/bundle/YouCompleteMe" ]; then
-    cd $VIM/bundle/YouCompleteMe && python3 install.py && --clang-completer && || {
+    cd $VIM/bundle/YouCompleteMe && python3 install.py --clang-completer || {
         echo "Failed to compile YouCompleteMe."
         echo "You must compile it yourself in order to use its completion service."
         open_info $YCM_COMPILE
