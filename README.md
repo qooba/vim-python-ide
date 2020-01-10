@@ -6,7 +6,6 @@
 
 Table of contents
 =================
-
   * [Getting Started](#getting-started)
     * [Bash](#bash)
     * [Fish](#fish)
@@ -37,7 +36,13 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/jarolrod/vim-python-ide/ma
 curl -fsSL https://raw.githubusercontent.com/jarolrod/vim-python-ide/master/setup.sh | sh       
 ```
 ### YouCompleteMe
-YouCompleteMe must be compiled for it to work
+YouCompleteMe must be compiled for it to work. The install script handles the compiling, but if something goes wrong then do the following:
+
+1. Make sure the following is included in your vimrc where all the vundle plugins are placed:
+```
+Plugin 'Valloric/YouCompleteMe'
+```
+
 #### MacOS
 1. Assuming you already have MacVim installed, install Cmake through brew
 ```
@@ -79,26 +84,8 @@ This plugin is used to show file icons in NerdTree and requires additional steps
 * Cherry pick the parts you like from my vimrc and add it to yours
 
 ## Plugins
-### Python
-* [Python Mode](https://github.com/python-mode/python-mode) - Python mode
-  * Add the following to the bottom of your vimrc to prevent errors:
-    ```
-     python3 << EOF
-     import vim
-     import git
-     def is_git_repo():
-           try:
-               _ = git.Repo('.', search_parent_directories=True).git_dir
-               return "1"
-           except:
-               return "0"
-     vim.command("let g:pymode_rope = " + is_git_repo())
-     EOF                 
-    ```
 * [PEP 8 Indentation](https://github.com/Vimjas/vim-python-pep8-indent) - Python Indentation
 * [Jinja](https://github.com/lepture/vim-jinja) - Syntax and Indentation
-* [Neomake](https://github.com/neomake/neomake) - An Asynchronous version of Syntastic
-* [Deoplete](https://github.com/Shougo/deoplete.nvim) - Asynchronous Compeletion Engine
 * [Python Combined](https://github.com/mitsuhiko/vim-python-combined) - Extra handling
 
 
@@ -129,8 +116,6 @@ This plugin is used to show file icons in NerdTree and requires additional steps
 * [Rainbow-Parantheses](https://github.com/kien/rainbow_parentheses.vim) - Rianbow Parentheses
 * [Vim-Wiki](https://github.com/vimwiki/vimwiki) - Personal Vim wiki
 * [Vimagit](https://github.com/jreybert/vimagit) - Git operations from buffer
-* [Base16](https://github.com/chriskempson/base16-vim) - Base16 Themes
-  * [Base16 Installation](#base16-optional)
 * [Dev Icons](https://github.com/ryanoasis/vim-devicons) - File icons in NerdTree
   * [DevIcons Installation](#devicons-optional)
 
