@@ -65,6 +65,7 @@ python3 ./install.py --clang-completer
 ### DevIcons (Optional)
 This plugin is used to show file icons in NerdTree and requires additional steps to install:
 * Must install a patched font that contains required glyphs: 
+    * on host computer: curl -L -O https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Mononoki.zip && unzip Mononoki.zip -d Mononoki && cp -r Mononoki /usr/share/fonts/truetype/ && fc-cache -f -v
     * [Arch Linux](https://aur.archlinux.org/packages/nerd-fonts-complete/)
     * [Everyone Else](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts)
   * Set vim encoding to UTF-8
