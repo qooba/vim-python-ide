@@ -172,6 +172,10 @@ autocmd BufWinLeave *.py :TagbarClose
 let NERDTreeIgnore=['\.pyc$', '\.pyo$', '__pycache__$']     " Ignore files in NERDTree
 let NERDTreeWinSize=40
 nmap " :NERDTreeToggle<CR>
+map <C-l> :NERDTreeToggle<CR>
+let NERDTreeChDirMode=2
+let NERDTreeMouseMode=2
+let NERDTreeWinPos="right"
 
 "=====================================================
 "" NERDComment Settings 
@@ -371,3 +375,10 @@ imap <F5> <Esc>:w<CR>:!clear;python %<CR>
 autocmd StdinReadPre * let g:isReadingFromStdin = 1
 autocmd VimEnter * nested if !argc() && !exists('g:isReadingFromStdin') | Startify | endif
 autocmd VimEnter * nested if !argc() && !exists('g:isReadingFromStdin') | NERDTree | endif
+
+" copy and paste
+vmap <C-c> "+yi
+vmap <C-x> "+c
+vmap <C-v> c<ESC>"+p
+imap <C-v> <ESC>"+pa
+
