@@ -163,8 +163,9 @@ let g:airline_powerline_fonts=1
 "=====================================================
 let g:tagbar_autofocus=0
 let g:tagbar_width=42
-autocmd BufEnter *.py :call tagbar#autoopen(0)
-autocmd BufWinLeave *.py :TagbarClose
+let g:tagbar_left = 1
+" autocmd BufEnter *.py :call tagbar#autoopen(0)
+" autocmd BufWinLeave *.py :TagbarClose
 
 "=====================================================
 "" NERDTree settings
@@ -173,8 +174,8 @@ let NERDTreeIgnore=['\.pyc$', '\.pyo$', '__pycache__$']     " Ignore files in NE
 let NERDTreeWinSize=40
 nmap " :NERDTreeToggle<CR>
 map <C-l> :NERDTreeToggle<CR>
-let NERDTreeChDirMode=2
-let NERDTreeMouseMode=2
+" let NERDTreeChDirMode=2
+" let NERDTreeMouseMode=2
 let NERDTreeWinPos="right"
 
 "=====================================================
