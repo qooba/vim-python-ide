@@ -164,7 +164,7 @@ wrapper() {
       if [ ! -d $VIM/colors/ ]; then
           mkdir -p $VIM/colors
       fi
-      wget 'http://www.vim.org/scripts/download_script.php?src_id=13400' -O $VIM/colors/wombat256mod.vim
+      curl -L 'http://www.vim.org/scripts/download_script.php?src_id=13400' -o $VIM/colors/wombat256mod.vim
   fi
 }
 
