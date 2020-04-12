@@ -153,6 +153,10 @@ wrapper() {
   printf "${BLUE}%s${NORMAL}\n" "Symlinking $VIM/vimrc with ~/.vimrc..."
   ln -fs $VIM/vimrc_dotnet ~/.vimrc
 
+  # Symlink tmux.conf files
+  printf "${BLUE}%s${NORMAL}\n" "Symlinking $VIM/tmux.conf with ~/.tmux.conf..."
+  ln -fs $VIM/tmux.conf ~/.tmux.conf
+
   # Install Bundle
   if [ ! -d "$VIM/bundle/Vundle.vim" ]; then
       printf "${BLUE}%s${NORMAL}\n" "Installing Vundle..."
