@@ -1,3 +1,4 @@
 *.bak
 bundle/
 colors/
+docker/miniconda3/jupyter/lab/workspaces/

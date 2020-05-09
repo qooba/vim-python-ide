@@ -282,6 +282,8 @@ let g:pymode_python='python'
 
 nmap <leader>g :YcmCompleter GoTo<CR>
 nmap <leader>d :YcmCompleter GoToDefinition<CR>
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
 
 let g:ale_emit_conflict_warnings = 0
 let g:airline#extensions#ale#enabled = 1
@@ -384,7 +386,10 @@ vmap <C-x> "+c
 vmap <C-v> c<ESC>"+p
 imap <C-v> <ESC>"+pa
 
-nmap <silent> <A-Up> :wincmd k<CR>
-nmap <silent> <A-Down> :wincmd j<CR>
-nmap <silent> <A-Left> :wincmd h<CR>
-nmap <silent> <A-Right> :wincmd l<CR>
+nmap <silent> <C-Up> :wincmd k<CR>
+nmap <silent> <C-Down> :wincmd j<CR>
+nmap <silent> <C-Left> :wincmd h<CR>
+nmap <silent> <C-Right> :wincmd l<CR>
+
+" set completeopt-=preview
+set splitbelow
