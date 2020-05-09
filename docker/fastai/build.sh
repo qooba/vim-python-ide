@@ -1,2 +1,2 @@
 #!/bin/bash
-docker build -t qooba/anaconda3:fastai .
+docker build -t qooba/fastai:20.01-py3 .
