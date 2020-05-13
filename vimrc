@@ -388,6 +388,8 @@ nmap <silent> <C-Down> :wincmd j<CR>
 nmap <silent> <C-Left> :wincmd h<CR>
 nmap <silent> <C-Right> :wincmd l<CR>
 
+nmap <silent> <C-A> <C-v>
+
 " set completeopt-=preview
 set splitbelow
 
