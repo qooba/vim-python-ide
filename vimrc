@@ -28,6 +28,8 @@ Plugin 'MattesGroeger/vim-bookmarks'        " Bookmarks
 Plugin 'thaerkh/vim-indentguides'           " Visual representation of indents
 Plugin 'w0rp/ale'                           " Async Lint Engine
 Plugin 'Valloric/YouCompleteMe'             " Code Completion
+Plugin 'tmhedberg/SimpylFold'               " Code Folding
+" Plugin 'craigemery/vim-autotag'
 
 "-------------------=== Other ===-------------------------------
 Plugin 'tpope/vim-surround'                 " Parentheses, brackets, quotes, XML tags, and more
@@ -117,6 +119,8 @@ nmap <silent> <leader>q :SyntasticCheck # <CR> :bp <BAR> bd #<CR>
 "=====================================================
 "" YouCompleteMe Settings
 "=====================================================
+"set tags=/app/tags
+"let g:ycm_collect_identifiers_from_tags_files = 1
 
 "=====================================================
 "" Ale Settings (Linting)
@@ -266,6 +270,13 @@ au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
+
+"=====================================================
+"" Simply Fold
+"=====================================================
+let g:SimpylFold_docstring_preview=1
+nnoremap <space> za
+set foldlevel=99
 
 "=====================================================
 "" Indent Guides Settings 

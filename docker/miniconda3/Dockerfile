@@ -5,4 +5,5 @@ RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/qooba/vim-python-ide/m
 RUN conda install xeus-python jupyterlab jupyterlab-git -c conda-forge
 RUN jupyter labextension install @jupyterlab/debugger @jupyterlab/git
 RUN pip install nbdev
+RUN echo "alias ls='ls --color=auto'" >> /root/.bashrc
 CMD bin/bash
