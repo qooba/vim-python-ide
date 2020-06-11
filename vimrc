@@ -119,6 +119,7 @@ nmap <silent> <leader>q :SyntasticCheck # <CR> :bp <BAR> bd #<CR>
 "=====================================================
 "" YouCompleteMe Settings
 "=====================================================
+"ctags -R --fields=+l --languages=python -f /app/tags ./
 "set tags=/app/tags
 "let g:ycm_collect_identifiers_from_tags_files = 1
 
