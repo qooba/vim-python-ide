@@ -26,7 +26,7 @@ Plugin 'fisadev/FixedTaskList.vim'          " Pending tasks list
 Plugin 'yuttie/comfortable-motion.vim'      " Smooth scrolling
 Plugin 'MattesGroeger/vim-bookmarks'        " Bookmarks
 Plugin 'thaerkh/vim-indentguides'           " Visual representation of indents
-Plugin 'w0rp/ale'                           " Async Lint Engine
+" Plugin 'w0rp/ale'                           " Async Lint Engine
 Plugin 'Valloric/YouCompleteMe',{ 'commit':'d98f896' }             " Code Completion
 Plugin 'tmhedberg/SimpylFold'               " Code Folding
 " Plugin 'craigemery/vim-autotag'
