@@ -1,3 +1,4 @@
+set belloff=all
 set nocompatible              " required
 filetype off                  " required
 set hidden
