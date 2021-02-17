@@ -27,7 +27,7 @@ Plugin 'fisadev/FixedTaskList.vim'          " Pending tasks list
 Plugin 'yuttie/comfortable-motion.vim'      " Smooth scrolling
 Plugin 'MattesGroeger/vim-bookmarks'        " Bookmarks
 Plugin 'thaerkh/vim-indentguides'           " Visual representation of indents
-Plugin 'w0rp/ale'                           " Async Lint Engine
+" Plugin 'w0rp/ale'                           " Async Lint Engine
 Plugin 'Valloric/YouCompleteMe',{ 'commit':'d98f896' }             " Code Completion
 Plugin 'tmhedberg/SimpylFold'               " Code Folding
 " Plugin 'craigemery/vim-autotag'
@@ -41,7 +41,7 @@ Plugin 'kien/rainbow_parentheses.vim'       " Rainbow Parentheses
 Plugin 'ryanoasis/vim-devicons'             " Dev Icons
 Plugin 'mhinz/vim-startify'                 " Vim Start Page
 "-------------------=== Snippets support ===--------------------
-Plugin 'garbas/vim-snipmate'                " Snippets manager
+" Plugin 'garbas/vim-snipmate'                " Snippets manager
 Plugin 'MarcWeber/vim-addon-mw-utils'       " dependencies #1
 Plugin 'tomtom/tlib_vim'                    " dependencies #2
 Plugin 'honza/vim-snippets'                 " snippets repo
