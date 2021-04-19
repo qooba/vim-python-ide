@@ -178,13 +178,15 @@ wrapper
 vim +PluginInstall +quitall
 if [ -d "$VIM/bundle/YouCompleteMe" ]; then
     cd $VIM/bundle/YouCompleteMe && git checkout d98f896 && python3 install.py --clang-completer || {
-        echo "Failed to compile YouCompleteMe."
-        echo "You must compile it yourself in order to use its completion service."
-        open_info $YCM_COMPILE
+        cd ./third_party/ycmd && git checkout 2c4b907dd0ec2d32bf0d8d997690de22aaa3ae4d && cd ../.. && git submodule update --init --recursive && python3 install.py --clang-completer || {
+            echo "Failed to compile YouCompleteMe."
+            echo "You must compile it yourself in order to use its completion service."
+        }
+        #open_info $YCM_COMPILE
     }
 else
     echo "YouCompleteMe was not found in your $VIM bundle directory."
     echo "Install this plugin and then compile it in order to use its completion service."
-    open_info $YCM_INSTALL
+    #open_info $YCM_INSTALL
 fi
 # vim
